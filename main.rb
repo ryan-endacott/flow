@@ -1,7 +1,7 @@
 
+require 'github_api'
+
 # Set up configuration
-Figaro.application = Figaro::Application.new(environment: "development", path: "application.yml")
-Figaro.load
 
 github = Github.new do |config|
   config.endpoint    = 'https://github.company.com/api/v3'
@@ -11,4 +11,5 @@ github = Github.new do |config|
   config.ssl         = {:verify => false}
 end
 
+puts ENV["GITHUB_PASSWORD"]
 

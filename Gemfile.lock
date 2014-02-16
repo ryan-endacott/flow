@@ -1,5 +1,9 @@
 GEM
+  remote: https://rubygems.org/
   specs:
+    active_support (3.0.0)
+      activesupport (= 3.0.0)
+    activesupport (3.0.0)
     addressable (2.3.5)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
@@ -35,5 +39,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_support
   github_api
   hue

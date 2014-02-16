@@ -21,20 +21,18 @@ twentyfour_hours_ago = Time.new.utc.advance(hours: -24).iso8601
 
 flow_points = 0
 
-recent_repos[0..3].each do |repo|
+recent_repos[0..6].each do |repo|
   commits = github.repos.commits.all(repo.owner.login, repo.name, since: twentyfour_hours_ago)
   flow_points += commits.count
 end
 
 puts flow_points
 
-=begin
 hue = Hue::Client.new
 
 hue.lights.each do |light|
   light.on = true
-  light.hue = Random.new.rand(0..MAX_HUE)
+  light.hue = flow_points * (MAX_HUE / 10) #Random.new.rand(0..MAX_HUE)
 end
-=end
 
 
